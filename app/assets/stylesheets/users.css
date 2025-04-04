@@ -1,0 +1,124 @@
+body {
+    background-color: #e5ddd5;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  }
+  
+  .user-list-container {
+    width: 80%;
+    max-width: 700px;
+    margin: 40px auto;
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  }
+  
+  .user-list-container h1 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #075e54;
+  }
+  
+  .user-list-container ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .user-list-container li {
+    padding: 15px 10px;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .user-list-container li:last-child {
+    border-bottom: none;
+  }
+  
+  .user-list-container form {
+    margin: 0;
+  }
+  
+  .nav-links {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .nav-button {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 5px;
+    background-color: #25d366;
+    color: white;
+    text-decoration: none;
+    border-radius: 20px;
+    font-weight: bold;
+    transition: background-color 0.2s ease-in-out;
+  }
+  
+  .nav-button:hover {
+    background-color: #1ebe5b;
+  }
+  
+  .user-form-container {
+    width: 80%;
+    max-width: 500px;
+    margin: 40px auto;
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  }
+  
+  .user-form-container h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #075e54;
+  }
+  
+  .user-form-container label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .user-form-container input {
+    width: 100%;
+    padding: 10px;
+    border-radius: 20px;
+    border: 1px solid #ccc;
+    margin-bottom: 20px;
+  }
+  
+  .user-form-container input[type=submit] {
+    background-color: #25d366;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.2s ease;
+  }
+  
+  .user-form-container input[type=submit]:hover {
+    background-color: #1ebe5b;
+  }
+  
+  .back-button {
+    display: inline-block;
+    margin-top: 10px;
+    color: #075e54;
+    text-decoration: none;
+    font-weight: bold;
+  }
+
+  .nav-button.danger {
+    background-color: #f44336;
+  }
+  
+  .nav-button.danger:hover {
+    background-color: #d32f2f;
+  }
+  
+  

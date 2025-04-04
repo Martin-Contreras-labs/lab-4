@@ -1,0 +1,19 @@
+<h1>Conversación</h1>
+
+<h2>Mensajes:</h2>
+<ul>
+  <% @conversation.messages.order(:created_at).each do |message| %>
+    <li>
+      <strong><%= message.user.name %>:</strong>
+      <%= message.content %> <em>(<%= message.created_at.strftime("%H:%M") %>)</em>
+    </li>
+  <% end %>
+</ul>
+
+<h3>Enviar nuevo mensaje:</h3>
+<%= form_with model: [@conversation, Message.new], local: true do |form| %>
+  <%= form.text_area :content, placeholder: "Escribe tu mensaje..." %><br>
+  <%= form.submit "Enviar" %>
+<% end %>
+
+<%= link_to "Volver a usuarios", users_path %>

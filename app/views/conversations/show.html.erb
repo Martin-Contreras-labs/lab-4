@@ -1,0 +1,23 @@
+
+<%= link_to "← Volver a mis conversaciones", user_conversations_path(1), class: "back-button" %>
+
+<div class="chat-container">
+  <div class="messages">
+    <% @conversation.messages.order(:created_at).each do |message| %>
+      <% clase = message.user_id == 1 ? "mine" : "theirs" %>
+      <div class="message <%= clase %>">
+        <div><%= message.content %></div>
+        <div class="timestamp"><%= message.created_at.strftime("%d/%m %H:%M") %></div>
+      </div>
+    <% end %>
+  </div>
+
+  <div class="message-form">
+    <%= form_with model: [@conversation, Message.new], local: true do |form| %>
+      <%= form.text_area :content, placeholder: "Escribe tu mensaje..." %>
+      <%= form.submit "Enviar" %>
+    <% end %>
+
+    
+  </div>
+</div>

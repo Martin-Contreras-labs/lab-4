@@ -1,0 +1,18 @@
+<div class="chat-list-container">
+<h1>Mis conversaciones</h1>
+
+
+<ul>
+  <% @conversations.each do |conversation| %>
+    <% other_user = conversation.sender_id == @user.id ? conversation.recipient : conversation.sender %>
+    <li>
+      Conversación con <strong><%= other_user.name %></strong>
+      <%= link_to "Ver conversación", conversation_path(conversation) %>
+    </li>
+  <% end %>
+</ul>
+
+<%= link_to "Volver a la lista de usuarios", users_path %>
+
+
+</div>

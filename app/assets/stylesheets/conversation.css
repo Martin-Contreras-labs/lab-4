@@ -1,0 +1,32 @@
+.chat-list-container {
+    width: 80%;
+    max-width: 700px;
+    margin: 40px auto;
+    background-color: #fdfdfd;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.08);
+  }
+  
+  .chat-list-container h1 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .chat-list-container ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .chat-list-container li {
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .chat-list-container li:last-child {
+    border-bottom: none;
+  }
+  

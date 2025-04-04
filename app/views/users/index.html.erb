@@ -1,0 +1,37 @@
+<div class="user-list-container">
+
+<div class="nav-links">
+  <%= link_to "Ver mis conversaciones", user_conversations_path(1), class: "nav-button" %>
+  <%= link_to "Agregar nuevo usuario", new_user_path, class: "nav-button" %>
+</div>
+<h1>Usuarios registrados</h1>
+<h4>(Actuas como el primer usuario que crees)</h4>
+
+<form method="get" action="/users">
+  <label for="order">Ordenar por:</label>
+  <select name="order" id="order" onchange="this.form.submit()">
+    <option value="">-- Selecciona --</option>
+    <option value="name" <%= 'selected' if @order == 'name' %>>Nombre (A-Z)</option>
+    <option value="recent" <%= 'selected' if @order == 'recent' %>>Más recientes</option>
+  </select>
+</form>
+
+<ul>
+  <% @users.each do |user| %>
+    <li><%= user.name %></li>
+
+    <%= form_with url: conversations_path, method: :post do |form| %>
+      <%= hidden_field_tag :sender_id, 1 %>
+      <%= hidden_field_tag :recipient_id, user.id %>
+      <%= form.submit "Iniciar conversación" %>
+    <% end %>
+  <% end %>
+
+</ul>
+
+
+<%= button_to "🗑️ Eliminar todos los usuarios", delete_all_users_path, method: :delete, data: { confirm: "¿Estás seguro de eliminar TODOS los usuarios?" }, class: "nav-button" %>
+
+<%= button_to "🗑️ Eliminar todos los chats", delete_all_chats_path, method: :delete, data: { confirm: "¿Estás seguro de eliminar TODOS los mensajes y conversaciones?" }, class: "nav-button" %>
+
+</div>
