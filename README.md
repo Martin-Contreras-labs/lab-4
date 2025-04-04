@@ -1,24 +1,3 @@
-# README
-
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+The only issue I wasn't able to fully resolve is that the chat system assumes the first created user is the one sending the messages — kind of like the "logged-in" user. At first, I managed to make it so that the first user had id = 1, but for some reason that stopped working later on. So now, you need to manually create that user via the Rails console using: rails console
+User.create(id: 1, name: "Your Name"). Once that’s done, everything should work properly again.
+I also added the option to delete all users and all chats. For some reason, deleting all users throws an error the first time — but if you try again, it works fine.
